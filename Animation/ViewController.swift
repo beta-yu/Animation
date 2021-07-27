@@ -10,23 +10,50 @@ import UIKit
 class ViewController: UIViewController {
     
     var viewA: UIView!
-
+    @IBOutlet var tableView: UITableView!
+    var titles = [String]()
+    let cellIdentifier = "cellreuseid"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewA = UIView(frame: CGRect(x: 0, y: 100, width: 40, height: 40))
-        viewA.backgroundColor = .green
-        view.addSubview(viewA)
+        title = "Animation"
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        titles = ["Basic", "ViewController Transition"]
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse]) {
-            let newFrame = self.viewA.frame.offsetBy(dx: 350, dy: 0)
-            self.viewA.frame = newFrame
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.textLabel?.text = titles[indexPath.row]
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let vc = BasicViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            let vc = storyboard?.instantiateViewController(withIdentifier: "VCTViewController")
+            if let viewController = vc {
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        default:
+            print("")
         }
     }
-
+    
 
 }
 

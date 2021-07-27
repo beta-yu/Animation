@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B17C60D26AC3F0B006535F9 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17C60C26AC3F0A006535F9 /* BasicViewController.swift */; };
+		7B17C61326AC5C48006535F9 /* VCTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17C61226AC5C48006535F9 /* VCTViewController.swift */; };
+		7B17C61526AC6854006535F9 /* VCTViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17C61426AC6854006535F9 /* VCTViewControllerTwo.swift */; };
+		7B17C61726AC6955006535F9 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17C61626AC6955006535F9 /* AnimationController.swift */; };
+		7B17C61B26B04C89006535F9 /* TransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17C61A26B04C89006535F9 /* TransitionInteractionController.swift */; };
+		7B17C61D26B04E12006535F9 /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17C61C26B04E12006535F9 /* TransitioningDelegate.swift */; };
 		7B7084ED26AAD378006ADDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7084EC26AAD378006ADDE1 /* AppDelegate.swift */; };
 		7B7084F126AAD378006ADDE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7084F026AAD378006ADDE1 /* ViewController.swift */; };
 		7B7084F426AAD378006ADDE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7084F226AAD378006ADDE1 /* Main.storyboard */; };
@@ -15,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B17C60C26AC3F0A006535F9 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		7B17C61226AC5C48006535F9 /* VCTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTViewController.swift; sourceTree = "<group>"; };
+		7B17C61426AC6854006535F9 /* VCTViewControllerTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTViewControllerTwo.swift; sourceTree = "<group>"; };
+		7B17C61626AC6955006535F9 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		7B17C61A26B04C89006535F9 /* TransitionInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionInteractionController.swift; sourceTree = "<group>"; };
+		7B17C61C26B04E12006535F9 /* TransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitioningDelegate.swift; sourceTree = "<group>"; };
 		7B7084E926AAD378006ADDE1 /* Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7084EC26AAD378006ADDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B7084F026AAD378006ADDE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +68,12 @@
 			children = (
 				7B7084EC26AAD378006ADDE1 /* AppDelegate.swift */,
 				7B7084F026AAD378006ADDE1 /* ViewController.swift */,
+				7B17C61226AC5C48006535F9 /* VCTViewController.swift */,
+				7B17C60C26AC3F0A006535F9 /* BasicViewController.swift */,
+				7B17C61426AC6854006535F9 /* VCTViewControllerTwo.swift */,
+				7B17C61626AC6955006535F9 /* AnimationController.swift */,
+				7B17C61A26B04C89006535F9 /* TransitionInteractionController.swift */,
+				7B17C61C26B04E12006535F9 /* TransitioningDelegate.swift */,
 				7B7084F226AAD378006ADDE1 /* Main.storyboard */,
 				7B7084F526AAD37A006ADDE1 /* Assets.xcassets */,
 				7B7084F726AAD37A006ADDE1 /* LaunchScreen.storyboard */,
@@ -135,7 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B17C61726AC6955006535F9 /* AnimationController.swift in Sources */,
+				7B17C61B26B04C89006535F9 /* TransitionInteractionController.swift in Sources */,
+				7B17C61D26B04E12006535F9 /* TransitioningDelegate.swift in Sources */,
 				7B7084F126AAD378006ADDE1 /* ViewController.swift in Sources */,
+				7B17C60D26AC3F0B006535F9 /* BasicViewController.swift in Sources */,
+				7B17C61526AC6854006535F9 /* VCTViewControllerTwo.swift in Sources */,
+				7B17C61326AC5C48006535F9 /* VCTViewController.swift in Sources */,
 				7B7084ED26AAD378006ADDE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
