@@ -1,13 +1,13 @@
 //
-//  AnimationController.swift
-//  AnimationController
+//  TransitionController.swift
+//  TransitionController
 //
-//  Created by Yu Qi on 2021/7/24.
+//  Created by qiyu on 2021/7/28.
 //
 
 import UIKit
 
-class AnimationController: NSObject {
+class TransitionController: UIPercentDrivenInteractiveTransition {
     
     enum AnimationType {
         case present
@@ -15,20 +15,18 @@ class AnimationController: NSObject {
     }
     
     private let animationDuration: Double
-    var animationType: AnimationType
+    private var animationType = AnimationType.present
     private let backgroundView = UIView()
+    var isInteractive = false
     
-    // MARK: Init
-    
-    init(animationDuration: Double, animationType: AnimationType) {
+    init(animationDuration: Double) {
         self.animationDuration = animationDuration
-        self.animationType = animationType
         backgroundView.backgroundColor = .white
     }
     
 }
 
-extension AnimationController: UIViewControllerAnimatedTransitioning {
+extension TransitionController: UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return TimeInterval(exactly: animationDuration) ?? 0
@@ -65,6 +63,7 @@ extension AnimationController: UIViewControllerAnimatedTransitioning {
             viewToAnimate.frame.origin = CGPoint(x: 0, y: transitionContext.containerView.bounds.height)
             self.backgroundView.alpha = 0
         } completion: { _ in
+            self.isInteractive = false
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
         
@@ -73,9 +72,6 @@ extension AnimationController: UIViewControllerAnimatedTransitioning {
     func presentAnimation(with transitionContext: UIViewControllerContextTransitioning, viewToAnimate: UIView) {
         
         viewToAnimate.frame.origin = CGPoint(x: 0, y: viewToAnimate.bounds.height)
-        var size = viewToAnimate.bounds.size
-        size.height = UIScreen.main.bounds.height - 50.0
-        viewToAnimate.bounds.size = size
         backgroundView.alpha = 0
         
         let duration = transitionDuration(using: transitionContext)
@@ -83,12 +79,40 @@ extension AnimationController: UIViewControllerAnimatedTransitioning {
         UIView.animate(withDuration: duration,
                        delay: 0,
                        options: .curveEaseOut) {
-            viewToAnimate.frame.origin = CGPoint(x: 0, y: 50.0)
+            viewToAnimate.frame.origin = CGPoint(x: 0, y: UIScreen.main.bounds.height - viewToAnimate.bounds.height)
             self.backgroundView.alpha = 1
         } completion: { _ in
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            transitionContext.completeTransition(true)
         }
 
+    }
+    
+}
+
+extension TransitionController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+                
+        animationType = .present
+        return self
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        animationType = .dismiss
+        return self
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+
+        // You must not return an interaction controller from this method unless
+        // the transition will be interactive.
+
+        if isInteractive {
+            return self
+        }
+
+        return nil
     }
     
 }

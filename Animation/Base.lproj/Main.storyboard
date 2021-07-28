@@ -116,18 +116,29 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N14-jP-D7q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gDY-st-gfr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Gg-bv-WAe"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="FaJ-eP-k30" firstAttribute="centerX" secondItem="FzQ-8F-65Q" secondAttribute="centerX" id="8mT-7H-4Nu"/>
                             <constraint firstItem="h2N-bF-PPi" firstAttribute="centerY" secondItem="FzQ-8F-65Q" secondAttribute="centerY" constant="100" id="Gec-Du-58c"/>
+                            <constraint firstItem="7Gg-bv-WAe" firstAttribute="trailing" secondItem="N14-jP-D7q" secondAttribute="trailing" id="IIO-PS-Lhu"/>
+                            <constraint firstItem="N14-jP-D7q" firstAttribute="leading" secondItem="7Gg-bv-WAe" secondAttribute="leading" id="Ube-It-ESG"/>
                             <constraint firstItem="FaJ-eP-k30" firstAttribute="centerY" secondItem="FzQ-8F-65Q" secondAttribute="centerY" constant="-100" id="ZhU-Jn-67w"/>
+                            <constraint firstItem="N14-jP-D7q" firstAttribute="top" secondItem="FzQ-8F-65Q" secondAttribute="top" id="gf3-UO-SQ5"/>
                             <constraint firstItem="h2N-bF-PPi" firstAttribute="centerX" secondItem="FzQ-8F-65Q" secondAttribute="centerX" id="k3e-zG-vGZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="h2N-bF-PPi" id="8KB-Lq-fNc"/>
+                        <outlet property="yellowView" destination="N14-jP-D7q" id="pup-Hh-vEl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNk-ll-hhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -141,6 +152,9 @@
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

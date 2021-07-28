@@ -10,7 +10,7 @@ import UIKit
 class VCTViewController: UIViewController {
     
     @IBOutlet var button: UIButton!
-    let transitionDelegate = TransitioningDelegate()
+    let transitionController = TransitionController(animationDuration: 0.2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,9 @@ class VCTViewController: UIViewController {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "VCTViewControllerTwo")
         if let viewController = vc {
-            viewController.transitioningDelegate = transitionDelegate
+            viewController.transitioningDelegate = transitionController
             viewController.modalPresentationStyle = .fullScreen
+            viewController.view.frame.size.height = 700
             self.present(viewController, animated: true, completion: nil)
         }
         
