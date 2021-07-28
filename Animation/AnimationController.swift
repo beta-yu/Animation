@@ -42,7 +42,7 @@ extension AnimationController: UIViewControllerAnimatedTransitioning {
               }
         
         let containerView = transitionContext.containerView
-        containerView.addSubview(backgroundView)
+        containerView.insertSubview(backgroundView, at: 0)
         backgroundView.frame = containerView.bounds
         
         switch animationType {
@@ -50,8 +50,7 @@ extension AnimationController: UIViewControllerAnimatedTransitioning {
             containerView.addSubview(toView)
             presentAnimation(with: transitionContext, viewToAnimate: toView)
         case .dismiss:
-            containerView.addSubview(toView)
-            containerView.addSubview(fromView)
+            containerView.insertSubview(toView, belowSubview: fromView)
             dismissAnimation(with: transitionContext, viewToAnimate: fromView)
         }
     }
@@ -64,6 +63,7 @@ extension AnimationController: UIViewControllerAnimatedTransitioning {
                        delay: 0,
                        options: .curveEaseOut) {
             viewToAnimate.frame.origin = CGPoint(x: 0, y: transitionContext.containerView.bounds.height)
+            self.backgroundView.alpha = 0
         } completion: { _ in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
