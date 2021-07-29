@@ -16,7 +16,6 @@
 		7B7084F626AAD37A006ADDE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7084F526AAD37A006ADDE1 /* Assets.xcassets */; };
 		7B7084F926AAD37A006ADDE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7084F726AAD37A006ADDE1 /* LaunchScreen.storyboard */; };
 		7BC9912C26B1283E003E0D09 /* TransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC9912B26B1283E003E0D09 /* TransitionController.swift */; };
-		7BC9912E26B13A42003E0D09 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC9912D26B13A42003E0D09 /* PresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		7B7084F826AAD37A006ADDE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B7084FA26AAD37A006ADDE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BC9912B26B1283E003E0D09 /* TransitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionController.swift; sourceTree = "<group>"; };
-		7BC9912D26B13A42003E0D09 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +68,6 @@
 				7B17C60C26AC3F0A006535F9 /* BasicViewController.swift */,
 				7B17C61426AC6854006535F9 /* VCTViewControllerTwo.swift */,
 				7BC9912B26B1283E003E0D09 /* TransitionController.swift */,
-				7BC9912D26B13A42003E0D09 /* PresentationController.swift */,
 				7B7084F226AAD378006ADDE1 /* Main.storyboard */,
 				7B7084F526AAD37A006ADDE1 /* Assets.xcassets */,
 				7B7084F726AAD37A006ADDE1 /* LaunchScreen.storyboard */,
@@ -152,7 +149,6 @@
 			files = (
 				7BC9912C26B1283E003E0D09 /* TransitionController.swift in Sources */,
 				7B7084F126AAD378006ADDE1 /* ViewController.swift in Sources */,
-				7BC9912E26B13A42003E0D09 /* PresentationController.swift in Sources */,
 				7B17C60D26AC3F0B006535F9 /* BasicViewController.swift in Sources */,
 				7B17C61526AC6854006535F9 /* VCTViewControllerTwo.swift in Sources */,
 				7B17C61326AC5C48006535F9 /* VCTViewController.swift in Sources */,

@@ -24,7 +24,7 @@ class VCTViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "VCTViewControllerTwo")
         if let viewController = vc {
             viewController.transitioningDelegate = transitionController
-            viewController.modalPresentationStyle = .fullScreen
+            viewController.modalPresentationStyle = .custom
             viewController.view.frame.size.height = 700
             self.present(viewController, animated: true, completion: nil)
         }
